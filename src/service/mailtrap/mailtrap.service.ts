@@ -20,7 +20,7 @@ export class MailtrapService {
           pass: MAILTRAP_PASS,
         },
       });
-      console.log('mailtra :', dato);
+      // console.log('mailtra :', dato);
       const { fullname, email } = dato;
       await transport.sendMail({
         from: 'RedSocial',

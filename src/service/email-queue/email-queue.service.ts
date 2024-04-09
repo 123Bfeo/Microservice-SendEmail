@@ -10,7 +10,7 @@ export class EmailQueueService {
     private readonly emailQueue: Queue,
   ) {}
   async sendQueueEmail(data: any) {
-    console.log('service :', data);
+    // console.log('service :', data);
     try {
       await this.emailQueue.add('send-email', data);
     } catch (error) {

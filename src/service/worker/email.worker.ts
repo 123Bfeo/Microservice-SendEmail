@@ -9,11 +9,12 @@ export class EmailWorker {
 
   @Process('send-email')
   async sendEmail(job: Job) {
+    const data = job.data;
+    //console.log('worker :', data);
     try {
-      const data = job.data;
-      console.log('worker :', data);
       await this.mailtrapService.emailSendConfirmation(data);
     } catch (error) {
+      console.error('Error al enviar el correo:', error.message);
       throw new Error('Error al enviar el correo');
     }
   }

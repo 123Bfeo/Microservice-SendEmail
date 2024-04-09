@@ -8,7 +8,7 @@ export class EmailController {
 
   @Post('send')
   async sendDataEmail(@Body() dtaEmail: any) {
-    console.log('controllers :', dtaEmail);
+    //console.log('controllers :', dtaEmail);
     try {
       await this.emailQueueService.sendQueueEmail(dtaEmail);
     } catch (error) {
